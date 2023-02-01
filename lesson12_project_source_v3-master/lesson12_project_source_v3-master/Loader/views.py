@@ -14,7 +14,7 @@ def create_new_post_page():
 
 @loader_blueprint.route('/post', methods=['POST'])
 def create_new_post():
-    picture = request.form.get('picture')
+    picture = request.files.get('picture')
     content = request.form.get('content')
 
     if not picture or not content:
